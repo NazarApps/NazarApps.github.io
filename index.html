@@ -144,10 +144,18 @@
     </header>
     <!-- header -->
     <!-- slider-area-start  -->
-    <audio controls autoplay loop hidden='true' preload="auto">
+    <!-- <audio controls autoplay loop hidden='true' preload="auto">
 		<source src="img/bone.mp3" type="audio/mpeg">
 		Your browser does not support the audio element.
-	</audio>
+	</audio> -->
+    <span class="sound">
+        <audio id="yourAudio" preload="none" onplay="playing(this);" onended="stopped(this);">
+            <source src=""img/bone.mp3"" type="audio/mpeg">
+        </audio>
+        <a href="javascript:;" id="audioControl" onclick="playclip(this);" title="Hear it spoken">
+            <i class="fa fa-2x fa-volume-down pronounce"></i>
+        </a>
+    </span>
     <!-- <iframe src="img/bone.mp3" allow="autoplay" hidden="true"></iframe> -->
 
 
@@ -498,8 +506,16 @@
 				$('#person').html(urlParams.get('n'))
 
 				$('#time').html(times(time));
+                
 
 			})
+            document.getElementById('yourAudio').addEventListener("mouseup", tapOrClick, false);
+                document.getElementById('yourAudio').addEventListener("touchend", tapOrClick, false);
+
+                function tapOrClick(e) {
+                    var mp3 = e.target;
+                        mp3.parentNode.getElementsByTagName('audio')[0].play();
+                }
 
 			$('#send').click(function () {
 
