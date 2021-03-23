@@ -509,6 +509,20 @@
                 
 
 			})
+            function playclip(mp3){
+                mp3.parentNode.getElementsByTagName('audio')[0].play();
+                return false; // Prevent Default Action
+            }
+            function playing(thisicon){
+                // var icon = document.getElementsByClassName("pronounce")[0];
+                var icon = thisicon.parentNode.getElementsByClassName('pronounce')[0];
+                icon.className = "fa fa-2x fa-volume-up pronounce";
+            }
+            function stopped(thisicon){
+                // var icon = document.getElementsByClassName("pronounce")[0];
+                var icon = thisicon.parentNode.getElementsByClassName('pronounce')[0];
+                icon.className = "fa fa-2x fa-volume-down pronounce";
+            }
             document.getElementById('yourAudio').addEventListener("mouseup", tapOrClick, false);
                 document.getElementById('yourAudio').addEventListener("touchend", tapOrClick, false);
 
