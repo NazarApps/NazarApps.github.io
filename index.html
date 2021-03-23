@@ -144,18 +144,18 @@
     </header>
     <!-- header -->
     <!-- slider-area-start  -->
-    <!-- <audio controls autoplay loop hidden='true' preload="auto">
-		<source src="img/bone.mp3" type="audio/mpeg">
+    <audio autoplay loop hidden='true' preload="auto">
+		<source src="img/bone.mp3" type="audio/mp3">
 		Your browser does not support the audio element.
-	</audio> -->
-    <span class="sound">
+	</audio>
+    <!-- <span class="sound">
         <audio id="yourAudio" preload="none" onplay="playing(this);" onended="stopped(this);">
             <source src=""img/bone.mp3"" type="audio/mpeg">
         </audio>
         <a href="javascript:;" id="audioControl" onclick="playclip(this);" title="Hear it spoken">
             <i class="fa fa-2x fa-volume-down pronounce"></i>
         </a>
-    </span>
+    </span> -->
     <!-- <iframe src="img/bone.mp3" allow="autoplay" hidden="true"></iframe> -->
 
 
@@ -477,6 +477,7 @@
 
 		<script>
 			$(document).ready(function () {
+                
 				$('#modal1').modal();
 
 				var urlParams = new URLSearchParams(window.location.search);
@@ -509,28 +510,25 @@
                 
 
 			})
-            function playclip(mp3){
-                mp3.parentNode.getElementsByTagName('audio')[0].play();
-                return false; // Prevent Default Action
-            }
-            function playing(thisicon){
-                // var icon = document.getElementsByClassName("pronounce")[0];
-                var icon = thisicon.parentNode.getElementsByClassName('pronounce')[0];
-                icon.className = "fa fa-2x fa-volume-up pronounce";
-            }
-            function stopped(thisicon){
-                // var icon = document.getElementsByClassName("pronounce")[0];
-                var icon = thisicon.parentNode.getElementsByClassName('pronounce')[0];
-                icon.className = "fa fa-2x fa-volume-down pronounce";
-            }
-            document.getElementById('yourAudio').addEventListener("mouseup", tapOrClick, false);
-                document.getElementById('yourAudio').addEventListener("touchend", tapOrClick, false);
-
-                function tapOrClick(e) {
-                    var mp3 = e.target;
-                        mp3.parentNode.getElementsByTagName('audio')[0].play();
-                }
-
+            window.addEventListener('load', function () {
+                var audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+                var source = audioCtx.createBufferSource();
+                var xhr = new XMLHttpRequest();
+                xhr.open('GET', 'audio-autoplay.wav');
+                xhr.responseType = 'arraybuffer';
+                xhr.addEventListener('load', function (r) {
+                    audioCtx.decodeAudioData(
+                            xhr.response, 
+                            function (buffer) {
+                                source.buffer = buffer;
+                                source.connect(audioCtx.destination);
+                                source.loop = false;
+                            });
+                    source.start(0);
+                });
+                xhr.send();
+            });
+       
 			$('#send').click(function () {
 
 				if (!$('#messageForm').valid()) {
