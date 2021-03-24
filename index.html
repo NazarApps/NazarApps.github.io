@@ -451,7 +451,7 @@
         <div class=footer>
             <!-- <i>Created By <a href="https://www.instagram.com/alifhbsy" target="_blank">Muhammad Alief Habsyi</a>
 				@2021<i> -->
-            <audio id="sound_tag" loop controls preload="auto" style="display:none">
+            <audio id="sound_tag" loop controls preload="auto">
                         <source src="img/bone.mp3" type="audio/mp3">
                         Your browser does not support the audio element.
                     </audio>
@@ -486,7 +486,7 @@
         <script>
             $(document).ready(function() {
                 var soundHandle = document.getElementById('modal1').addEventListener('touchstart', function(e) {
-                    alert("oke123");
+                    alert("oke");
                     soundHandle.src = 'img/bone.mp3';
                     var sound_tag = document.getElementById('sound_tag');
                     sound_tag.play(); //
