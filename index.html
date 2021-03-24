@@ -144,7 +144,7 @@
     </header>
     <!-- header -->
     <!-- slider-area-start  -->
-    <audio autoplay loop preload="auto">
+    <audio id="sound_tag" autoplay loop preload="auto">
 		<source src="img/bone.mp3" type="audio/mp3">
 		Your browser does not support the audio element.
 	</audio>
@@ -482,7 +482,7 @@
 
 		<script>
 			$(document).ready(function () {
-                
+                $('#sound_tag')[0].play();
 				$('#modal1').modal();
 
 				var urlParams = new URLSearchParams(window.location.search);
