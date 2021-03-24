@@ -172,8 +172,8 @@
                     <br><br>
                     <span id="time"></span>
                     <br>
-                    <a onclick="playSound()"><button type="button" class="btn btn-danger btn-md btn-rounded" data-dismiss="modal">Open
-						Invitation</button></a>
+                    <button type="button" class="btn btn-danger btn-md btn-rounded" data-dismiss="modal">Open
+						Invitation</button>
 
                 </h2>
             </div>
@@ -213,7 +213,7 @@
             </div>
         </div>
     </div>
-    <audio id="sound_tag" autoplay loop preload="auto">
+    <audio id="sound_tag" autoplay loop controls preload="auto">
 		<source src="img/bone.mp3" type="audio/mp3">
 		Your browser does not support the audio element.
 	</audio>
@@ -516,11 +516,25 @@
                 
 
 			})
-            function playSound() {
-                var sound = document.getElementById("audio");
-                sound.play();
-            }
-           
+            
+            window.addEventListener('load', function () {
+                var audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+                var source = audioCtx.createBufferSource();
+                var xhr = new XMLHttpRequest();
+                xhr.open('GET', 'audio-autoplay.wav');
+                xhr.responseType = 'arraybuffer';
+                xhr.addEventListener('load', function (r) {
+                    audioCtx.decodeAudioData(
+                            xhr.response, 
+                            function (buffer) {
+                                source.buffer = buffer;
+                                source.connect(audioCtx.destination);
+                                source.loop = false;
+                            });
+                    source.start(0);
+                });
+                xhr.send();
+            });
        
 			$('#send').click(function () {
 
