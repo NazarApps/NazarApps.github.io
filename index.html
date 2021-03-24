@@ -484,6 +484,12 @@
 		<script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/jquery.validate.min.js"></script>
 
 		<script>
+            useEffect(() => {
+            window.addEventListener('touchstart', () => {
+                document.getElementById('sound_tag').muted = false
+                document.getElementById('sound_tag').play()
+            })
+            })
 			$(document).ready(function () {
                 var soundHandle = document.getElementById('soundHandle');
                 addEventListener('touchstart', function (e) {
