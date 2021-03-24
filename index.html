@@ -213,10 +213,12 @@
             </div>
         </div>
     </div>
-    <audio id="sound_tag" autoplay loop controls preload="auto">
+    <!-- <audio id="sound_tag" autoplay loop controls preload="auto">
 		<source src="img/bone.mp3" type="audio/mp3">
 		Your browser does not support the audio element.
-	</audio>
+	</audio> -->
+    <audio id="soundHandle" style="display:none;"></audio>
+
     <!-- slider-area-end -->
     <!-- cauple-area-start -->
     <div class="cauple-area ptb-90">
@@ -483,8 +485,14 @@
 
 		<script>
 			$(document).ready(function () {
-                $('#sound_tag')[0].play();
-				$('#modal1').modal();
+                var soundHandle = document.getElementById('soundHandle');
+                addEventListener('touchstart', function (e) {
+                    soundHandle.src = 'img/bone.mp3';
+                    soundHandle.loop = true;
+                    soundHandle.play();
+                    soundHandle.pause();
+                });
+                $('#modal1').modal();
 
 				var urlParams = new URLSearchParams(window.location.search);
 
@@ -516,36 +524,7 @@
                 
 
 			})
-            function fakeClick(fn) {
-            var $a = $('<a href="#" id="fakeClick"></a>');
-                $a.bind("click", function(e) {
-                    e.preventDefault();
-                    fn();
-                });
-
-            $("body").append($a);
-
-            var evt, 
-                el = $("#fakeClick").get(0);
-
-            if (document.createEvent) {
-                evt = document.createEvent("MouseEvents");
-                if (evt.initMouseEvent) {
-                    evt.initMouseEvent("click", true, true, window, 0, 0, 0, 0, 0, false, false, false, false, 0, null);
-                    el.dispatchEvent(evt);
-                }
-            }
-
-            $(el).remove();
-        }
-
-        $(function() {
-            var video = $("#someVideo").get(0);
-
-            fakeClick(function() {
-                video.play();
-            });
-        });
+           
         function fakeClick(fn) {
             var $a = $('<a href="#" id="fakeClick"></a>');
                 $a.bind("click", function(e) {
@@ -577,24 +556,7 @@
             });
         });
             
-            window.addEventListener('load', function () {
-                var audioCtx = new (window.AudioContext || window.webkitAudioContext)();
-                var source = audioCtx.createBufferSource();
-                var xhr = new XMLHttpRequest();
-                xhr.open('GET', 'audio-autoplay.wav');
-                xhr.responseType = 'arraybuffer';
-                xhr.addEventListener('load', function (r) {
-                    audioCtx.decodeAudioData(
-                            xhr.response, 
-                            function (buffer) {
-                                source.buffer = buffer;
-                                source.connect(audioCtx.destination);
-                                source.loop = false;
-                            });
-                    source.start(0);
-                });
-                xhr.send();
-            });
+     
        
 			$('#send').click(function () {
 
