@@ -213,10 +213,6 @@
             </div>
         </div>
     </div>
-    <audio id="sound_tag" autoplay loop controls preload="auto">
-		<source src="img/bone.mp3" type="audio/mp3">
-		Your browser does not support the audio element.
-	</audio>
 
     <!-- slider-area-end -->
     <!-- cauple-area-start -->
@@ -453,39 +449,44 @@
             </div>
         </div>
         <div class=footer>
-            <i>Created By <a href="https://www.instagram.com/alifhbsy" target="_blank">Muhammad Alief Habsyi</a>
-				@2021<i>
-		</div>
+            <!-- <i>Created By <a href="https://www.instagram.com/alifhbsy" target="_blank">Muhammad Alief Habsyi</a>
+				@2021<i> -->
+            <audio id="sound_tag" autoplay loop controls preload="auto">
+                        <source src="img/bone.mp3" type="audio/mp3">
+                        Your browser does not support the audio element.
+                    </audio>
+
+        </div>
 
 
-		<!-- all js here -->
-		<!-- jquery-1.12.0.min.js -->
-		<script src="js/vendor/jquery-1.12.0.min.js"></script>
-		<!-- bootstrap.min.js -->
-		<script src="js/bootstrap.min.js"></script>
-		<!-- jquery.magnific-popup.min.js -->
-		<script src="js/jquery.magnific-popup.min.js"></script>
-		<!-- jquery.meanmenu.js -->
-		<script src="js/jquery.meanmenu.js"></script>
-		<!-- jquery.sticky.js -->
-		<script src="js/jquery.sticky.js"></script>
-		<!-- jquery.scrollUp.min.js -->
-		<script src="js/jquery.scrollUp.min.js"></script>
-		<!-- jquery.meanmenu.js -->
-		<script src="js/owl.carousel.min.js"></script>
-		<!-- Google Map js -->
+        <!-- all js here -->
+        <!-- jquery-1.12.0.min.js -->
+        <script src="js/vendor/jquery-1.12.0.min.js"></script>
+        <!-- bootstrap.min.js -->
+        <script src="js/bootstrap.min.js"></script>
+        <!-- jquery.magnific-popup.min.js -->
+        <script src="js/jquery.magnific-popup.min.js"></script>
+        <!-- jquery.meanmenu.js -->
+        <script src="js/jquery.meanmenu.js"></script>
+        <!-- jquery.sticky.js -->
+        <script src="js/jquery.sticky.js"></script>
+        <!-- jquery.scrollUp.min.js -->
+        <script src="js/jquery.scrollUp.min.js"></script>
+        <!-- jquery.meanmenu.js -->
+        <script src="js/owl.carousel.min.js"></script>
+        <!-- Google Map js -->
 
-		<!-- plugins.js -->
-		<script src="js/plugins.js"></script>
-		<!-- main.js -->
-		<script src="js/main.js"></script>
+        <!-- plugins.js -->
+        <script src="js/plugins.js"></script>
+        <!-- main.js -->
+        <script src="js/main.js"></script>
 
-		<script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/jquery.validate.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/jquery.validate.min.js"></script>
 
-		<script>
-			$(document).ready(function () {
+        <script>
+            $(document).ready(function() {
                 var soundHandle = document.getElementById('soundHandle');
-                addEventListener('touchstart', function (e) {
+                addEventListener('touchstart', function(e) {
                     soundHandle.src = 'img/bone.mp3';
                     soundHandle.loop = true;
                     soundHandle.play();
@@ -493,93 +494,92 @@
                 });
                 $('#modal1').modal();
 
-				var urlParams = new URLSearchParams(window.location.search);
+                var urlParams = new URLSearchParams(window.location.search);
 
-				var time = urlParams.get('s');
+                var time = urlParams.get('s');
 
-				var times = function (e) {
-					switch (e) {
-						case '1':
-							return '28 Maret sesi 1<br> Jam 09.00 - 10.00'
-							break;
-						case '2':
-							return '28 Maret sesi 2<br> Jam 10.00 - 11.00'
-							break;
-						case '3':
-							return '28 Maret sesi 3<br> Jam 11.00 - 12.00'
-							break;
-						case '4':
-							return '28 Maret sesi 4<br> Jam 13.00 - 14.00'
-							break;
-						default:
-							return ''
-							break;
-					}
-				}
+                var times = function(e) {
+                    switch (e) {
+                        case '1':
+                            return '28 Maret sesi 1<br> Jam 09.00 - 10.00'
+                            break;
+                        case '2':
+                            return '28 Maret sesi 2<br> Jam 10.00 - 11.00'
+                            break;
+                        case '3':
+                            return '28 Maret sesi 3<br> Jam 11.00 - 12.00'
+                            break;
+                        case '4':
+                            return '28 Maret sesi 4<br> Jam 13.00 - 14.00'
+                            break;
+                        default:
+                            return ''
+                            break;
+                    }
+                }
 
-				$('#person').html(urlParams.get('n'))
+                $('#person').html(urlParams.get('n'))
 
-				$('#time').html(times(time));
-                
+                $('#time').html(times(time));
 
-			})
-           
-        function fakeClick(fn) {
-            var $a = $('<a href="#" id="fakeClick"></a>');
+
+            })
+
+            function fakeClick(fn) {
+                var $a = $('<a href="#" id="fakeClick"></a>');
                 $a.bind("click", function(e) {
                     e.preventDefault();
                     fn();
                 });
 
-            $("body").append($a);
+                $("body").append($a);
 
-            var evt, 
-                el = $("#fakeClick").get(0);
+                var evt,
+                    el = $("#fakeClick").get(0);
 
-            if (document.createEvent) {
-                evt = document.createEvent("MouseEvents");
-                if (evt.initMouseEvent) {
-                    evt.initMouseEvent("click", true, true, window, 0, 0, 0, 0, 0, false, false, false, false, 0, null);
-                    el.dispatchEvent(evt);
+                if (document.createEvent) {
+                    evt = document.createEvent("MouseEvents");
+                    if (evt.initMouseEvent) {
+                        evt.initMouseEvent("click", true, true, window, 0, 0, 0, 0, 0, false, false, false, false, 0, null);
+                        el.dispatchEvent(evt);
+                    }
                 }
+
+                $(el).remove();
             }
 
-            $(el).remove();
-        }
+            $(function() {
+                var video = $("#sound_tag").get(0);
 
-        $(function() {
-            var video = $("#sound_tag").get(0);
-
-            fakeClick(function() {
-                video.play();
+                fakeClick(function() {
+                    video.play();
+                });
             });
-        });
-            
-     
-       
-			$('#send').click(function () {
 
-				if (!$('#messageForm').valid()) {
-					return
-				}
 
-				$.ajax({
-					type: 'POST',
-					url: 'https://rnazarf.com/wedding/store_data.php',
-					data: $('#messageForm').serialize(),
-					dataType: 'json',
-					success: function (result) {
-						console.log(result);
-					},
-					complete: function () {
-						$('#messageForm')[0].reset()
-						alert('Terimakasih telah mengisi')
-					}
-				})
 
-			});
+            $('#send').click(function() {
 
-		</script>
+                if (!$('#messageForm').valid()) {
+                    return
+                }
+
+                $.ajax({
+                    type: 'POST',
+                    url: 'https://rnazarf.com/wedding/store_data.php',
+                    data: $('#messageForm').serialize(),
+                    dataType: 'json',
+                    success: function(result) {
+                        console.log(result);
+                    },
+                    complete: function() {
+                        $('#messageForm')[0].reset()
+                        alert('Terimakasih telah mengisi')
+                    }
+                })
+
+            });
+        </script>
 </body>
 
 <!-- Mirrored from preview.hasthemes.com/james-shuchi-preview/james-shuchi/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 22 Mar 2021 07:42:18 GMT -->
