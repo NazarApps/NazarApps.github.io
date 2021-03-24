@@ -485,8 +485,8 @@
 
         <script>
             $(document).ready(function() {
-                var soundHandle = document.getElementById('mantap');
-                addEventListener('click', function(e) {
+                var soundHandle = document.getElementById('mantap').addEventListener('click', function(e) {
+                    alert("oke");
                     soundHandle.src = 'img/bone.mp3';
                     soundHandle.loop = true;
                     soundHandle.play();
