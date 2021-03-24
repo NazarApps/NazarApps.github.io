@@ -486,11 +486,13 @@
         <script>
             $(document).ready(function() {
                 var soundHandle = document.getElementById('modal1').addEventListener('touchstart', function(e) {
-                    alert("oke2");
+                    alert("oke123");
                     soundHandle.src = 'img/bone.mp3';
-                    soundHandle.loop = true;
-                    soundHandle.play();
-                    soundHandle.pause(); //
+                    var sound_tag = document.getElementById('sound_tag');
+                    sound_tag.play(); //
+                    sound_tag.loop = true;
+                    // soundHandle.play();
+                    // soundHandle.pause(); //
                 });
                 // var sound_tag = document.getElementById('sound_tag');
                 // sound_tag.play(); //
