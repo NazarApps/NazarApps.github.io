@@ -485,12 +485,12 @@
 
         <script>
             $(document).ready(function() {
-                var soundHandle = document.getElementById('oke').addEventListener('touchstart', function(e) {
-                    alert("oke1");
+                var soundHandle = document.getElementById('sound_tag').addEventListener('touchstart', function(e) {
+                    alert("oke2");
                     soundHandle.src = 'img/bone.mp3';
-                    var sound_tag = document.getElementById('sound_tag');
-                    sound_tag.play(); //
-                    sound_tag.loop = true;
+                    // var sound_tag = document.getElementById('sound_tag');
+                    soundHandle.play(); //
+                    soundHandle.loop = true;
                     // soundHandle.play();
                     // soundHandle.pause(); //
                 });
