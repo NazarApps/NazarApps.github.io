@@ -172,7 +172,7 @@
                     <br><br>
                     <span id="time"></span>
                     <br>
-                    <button type="button" class="btn btn-danger btn-md btn-rounded" data-dismiss="modal">Open
+                    <button type="button" class="btn btn-danger btn-md btn-rounded" id='mantap' data-dismiss="modal">Open
 						Invitation</button>
 
                 </h2>
@@ -485,8 +485,8 @@
 
         <script>
             $(document).ready(function() {
-                var soundHandle = document.getElementById('sound_tag');
-                addEventListener('touchstart', function(e) {
+                var soundHandle = document.getElementById('mantap');
+                addEventListener('click', function(e) {
                     soundHandle.src = 'img/bone.mp3';
                     soundHandle.loop = true;
                     soundHandle.play();
