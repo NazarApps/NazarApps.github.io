@@ -217,7 +217,6 @@
 		<source src="img/bone.mp3" type="audio/mp3">
 		Your browser does not support the audio element.
 	</audio>
-    <audio id="soundHandle" style="display:none;"></audio>
 
     <!-- slider-area-end -->
     <!-- cauple-area-start -->
@@ -484,12 +483,6 @@
 		<script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/jquery.validate.min.js"></script>
 
 		<script>
-            useEffect(() => {
-            window.addEventListener('touchstart', () => {
-                document.getElementById('sound_tag').muted = false
-                document.getElementById('sound_tag').play()
-            })
-            })//
 			$(document).ready(function () {
                 var soundHandle = document.getElementById('soundHandle');
                 addEventListener('touchstart', function (e) {
