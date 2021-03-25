@@ -485,15 +485,17 @@
 
         <script>
             $(document).ready(function() {
-                var soundHandle = document.getElementById('sound_tag').addEventListener('touchstart', function(e) {
-                    alert("oke2");
-                    soundHandle.src = 'img/bone.mp3';
-                    // var sound_tag = document.getElementById('sound_tag');
-                    soundHandle.play(); //
-                    soundHandle.loop = true;
-                    // soundHandle.play();
-                    // soundHandle.pause(); //
-                });
+                $('#sound_tag').play();
+                alert("okelah");
+                // var soundHandle = document.getElementById('sound_tag').addEventListener('touchstart', function(e) {
+                //     // alert("oke2");
+                //     soundHandle.src = 'img/bone.mp3';
+                //     // var sound_tag = document.getElementById('sound_tag');
+                //     soundHandle.play(); //
+                //     soundHandle.loop = true;
+                //     // soundHandle.play();
+                //     // soundHandle.pause(); //
+                // });
                 // var sound_tag = document.getElementById('sound_tag');
                 // sound_tag.play(); //
                 $('#modal1').modal();
