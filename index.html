@@ -485,8 +485,8 @@
 
         <script>
             $(document).ready(function() {
-                $('#sound_tag').play();
-                alert("okelah");
+                // $('#sound_tag').play();
+                // alert("okelah");
                 // var soundHandle = document.getElementById('sound_tag').addEventListener('touchstart', function(e) {
                 //     // alert("oke2");
                 //     soundHandle.src = 'img/bone.mp3';
@@ -529,6 +529,9 @@
                 $('#time').html(times(time));
 
 
+            })
+            $('#modal1').on('hidden.bs.modal', function(e) {
+                alert("okeja");
             })
 
             // function fakeClick(fn) {
