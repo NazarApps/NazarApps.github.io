@@ -451,10 +451,12 @@
         <div class=footer>
             <!-- <i>Created By <a href="https://www.instagram.com/alifhbsy" target="_blank">Muhammad Alief Habsyi</a>
 				@2021<i> -->
-            <audio id="sound_tag" autoplay loop controls preload="auto">
+            <!-- <audio id="sound_tag" autoplay loop controls preload="auto">
                         <source src="img/bone.mp3" type="audio/mp3">
                         Your browser does not support the audio element.
-                    </audio>
+                    </audio> -->
+            <audio id="soundHandle" style="display:none;"></audio>
+
 
         </div>
 
@@ -485,6 +487,12 @@
 
         <script>
             $(document).ready(function() {
+                addEventListener('touchstart', function(e) {
+                    soundHandle.src = 'img/bone.mp3';
+                    soundHandle.loop = true;
+                    soundHandle.play();
+                    soundHandle.pause();
+                });
                 // $('#sound_tag').play();
                 // alert("okelah");
                 // var soundHandle = document.getElementById('sound_tag').addEventListener('touchstart', function(e) {
@@ -532,9 +540,9 @@
             })
             var x = document.getElementById("sound_tag");
             $('#modal1').on('hidden.bs.modal', function(e) {
-                alert("Thank You!");
-                x.load();
-                x.play();
+                alert("Thanks");
+                // x.load();
+                // x.play();
 
             })
 
