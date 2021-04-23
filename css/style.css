@@ -1026,7 +1026,7 @@ header {
 		}
 			.story_img_plane:after {
 				position: absolute;
-				background: #000
+				background: #000;
 				z-index: 4;
 				width: 10%;
 				height: 400px;
@@ -1242,13 +1242,13 @@ header {
 			font:46px Great Vibes
 		}
 		.form-control {
-			border-radius:0;
+			/* border-radius:0; */
 			background:none;
-			border:0;
-			border-bottom:1px solid #595959;
+			/* border:0; */
+			/* border-bottom:1px solid #595959; */
 			font:22px Roboto Condensed!important;
-			box-shadow:0 0 0 !important;
-			position:relative;
+			/* box-shadow:0 0 0 !important; */
+			/* position:relative; */
 			height:40px!important
 		}
 			.txt_input {
@@ -1263,7 +1263,7 @@ header {
 					display:block;
 					content:"";
 					width:1px;
-					background:#595959;
+					/* background:#595959; */
 					height:5px;
 					bottom:0
 				}
@@ -1272,7 +1272,7 @@ header {
 					display:block;
 					content:"";
 					width:1px;
-					background:#595959;
+					/* background:#595959; */
 					height:5px;
 					bottom:0;
 					right:0
