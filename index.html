@@ -71,12 +71,22 @@
                     <div class="modal-body">
                         <div class="single-slider">
                             <div class="slider-content text-white" style="padding-top: 200px">
+                                <script>
+                                    function play() {
+                                      var audio = document.getElementById("audio");
+                                      audio.play();
+                                    }
+                                  </script>
+                              
+                                 
+                                  
                                 <h2>
                                     Mr/Mrs <div id="person"></div>
                                     <br>
                                     You are Invited to Nani & Wahidin    
                                     <br>                                
-                                    <button type="button" class="btn btn-danger btn-md btn-rounded" data-dismiss="modal">Open Invitation</button>
+                                    <button type="button" value="PLAY" onclick="play()" class="btn btn-danger btn-md btn-rounded" data-dismiss="modal">Open Invitation</button>
+                                    <audio id="audio" src="images/baru/sepertiga.mp3"></audio>
                                 </h2>
                             </div>
                         </div>
