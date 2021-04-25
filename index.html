@@ -86,7 +86,7 @@
                                     You are Invited to Nani & Wahidin    
                                     <br>                                
                                     <button type="button" value="PLAY" onclick="play()" class="btn btn-danger btn-md btn-rounded" data-dismiss="modal">Open Invitation</button>
-                                    <audio id="audio" src="images/baru/sepertiga.mp3"></audio>
+                                    <audio id="audio" src="images/baru/sepertiga.mp3" loop></audio>
                                 </h2>
                             </div>
                         </div>
@@ -133,7 +133,7 @@
     <div class="page">
 
         <!-- Intro -->
-        <section class="home_intro white_txt parallax2" data-image="images/back.jpg">
+        <section class="home_intro white_txt parallax2" data-image="images/baru/cover.jpg">
             <div class="home_txt" data-0="opacity:1" data-top-bottom="opacity:0">
 
                 <!-- Intro Text -->
@@ -190,14 +190,14 @@
 
                 <!-- Item -->
                 <div class="story_item">
-                    <div class="story_img parallax" data-image="images/port2.jpg">
+                    <div class="story_img parallax" data-image="images/baru/ourstory.jpg">
                         <div class="story_img_plane"></div>
                     </div>
                     <div class="story_plane">
                         <div class="story_back"></div>
                         <div class="story_txt">
                             <div class="story_title">
-                                Our Engangement Day
+                                Our Special Day
                                 <i>20.12.2020</i>
                             </div>
 
@@ -207,7 +207,7 @@
 
                 <!-- Item -->
                 <div class="story_item">
-                    <div class="story_img parallax" data-image="images/port3.jpg">
+                    <div class="story_img parallax" data-image="images/baru/footer.jpg">
                         <i class="flaticon-play102"></i></a>
                         <div class="story_img_plane"></div>
                     </div>
@@ -215,7 +215,7 @@
                         <div class="story_back"></div>
                         <div class="story_txt">
                             <div class="story_title">
-                                Our Engangement Day
+                                Our Special Day
                                 <i>20.12.2020</i>
                             </div>
 
@@ -225,14 +225,14 @@
 
                 <!-- Item -->
                 <div class="story_item">
-                    <div class="story_img parallax" data-image="images/port1.jpg">
+                    <div class="story_img parallax" data-image="images/baru/ourstory3.jpeg">
                         <div class="story_img_plane"></div>
                     </div>
                     <div class="story_plane">
                         <div class="story_back"></div>
                         <div class="story_txt">
                             <div class="story_title">
-                                Our Engangement Day
+                                Our Special Day
                                 <i>20.12.2020</i>
                             </div>
 
@@ -242,14 +242,14 @@
 
                 <!-- Item -->
                 <div class="story_item">
-                    <div class="story_img parallax" data-image="images/port4.jpg">
+                    <div class="story_img parallax" data-image="images/baru/cover.jpg">
                         <div class="story_img_plane"></div>
                     </div>
                     <div class="story_plane">
                         <div class="story_back"></div>
                         <div class="story_txt">
                             <div class="story_title">
-                                Our Engangement Day
+                                Our Special Day
                                 <i>20.12.2020</i>
                             </div>
 
@@ -343,8 +343,8 @@
                             <div class="txt_input" style="width: 100%;">
                                 <select class="form-control" id="kehadiran" name="kehadiran" required>
                                     <option value="">Pilih kehadiran</option>
-                                    <option value="Hadir">Hadir</option>
-                                    <option value="Tidak Hadir">Tidak Hadir</option>
+                                    <option value="Akan Berhadir">Hadir</option>
+                                    <option value="Belum Bisa Hadir">Tidak Hadir</option>
                                 </select>
                             </div>
                             <br>
@@ -373,31 +373,31 @@
                     <div class="gallery_txt">
 
                     </div>
-                    <img src="images/port1.jpg" alt="Gallery 1">
+                    <img src="images/baru/gal1.jpeg" alt="Gallery 1">
                 </div>
                 <div class="gallery_item">
                     <div class="gallery_txt">
 
                     </div>
-                    <img src="images/port2.jpg" alt="Gallery 2">
+                    <img src="images/baru/gal2.jpeg" alt="Gallery 2">
                 </div>
                 <div class="gallery_item">
                     <div class="gallery_txt">
 
                     </div>
-                    <img src="images/port3.jpg" alt="Gallery 3">
+                    <img src="images/baru/gal3.jpeg" alt="Gallery 3">
                 </div>
                 <div class="gallery_item">
                     <div class="gallery_txt">
 
                     </div>
-                    <img src="images/port4.jpg" alt="Gallery 4">
+                    <img src="images/baru/gal4.jpeg" alt="Gallery 4">
                 </div>
                 <div class="gallery_item">
                     <div class="gallery_txt">
 
                     </div>
-                    <img src="images/port5.jpg" alt="Gallery 5">
+                    <img src="images/baru/gal1.jpeg" alt="Gallery 5">
                 </div>
                 <div class="gallery_item">
                     <div class="gallery_txt">
@@ -479,7 +479,7 @@
         <script>
             $('#modal1').modal();
             var urlParams = new URLSearchParams(window.location.search);
-            $('#person').html(urlParams.get('n') ? urlParams.get('n') : 'John Doe')
+            $('#person').html(urlParams.get('n') ? urlParams.get('n') : '')
 
         </script>
 
