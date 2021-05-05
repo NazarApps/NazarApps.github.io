@@ -59,12 +59,12 @@
         <div class="sub_img anim"></div>
       </div>
     </div>
-    <!-- Submenu End -->    
+    <!-- Submenu End -->
 
   </header>
   <!-- Header End -->
 
-  <div class="page">
+  <div style="height:3000px;" class="page">
 
     <!-- Intro -->
     <section class="home_intro parallax2" data-image="images/back.jpg">
@@ -72,31 +72,33 @@
         <div class="text-align:center;">
           <h3><u> Tamu yang mengisi</u></h3>
         </div>
-        <table id="example" class="display table-bordered" style="width:100%">
-          <thead>
-            <tr>
-              <th>Nama</th>
-              <th>Kehadiran</th>
-              <th>Ucapan</th>
-              <th>Tanggal Mengisi</th>
-            </tr>
-          </thead>
-          <tfoot>
-            <tr>
-              <th>Nama</th>
-              <th>Kehadiran</th>
-              <th>Ucapan</th>
-              <th>Tanggal Mengisi</th>
-            </tr>
-          </tfoot>
-        </table>
+        <div class="table-responsive">
+          <table id="example" class="display table-bordered">
+            <thead>
+              <tr>
+                <th>Nama</th>
+                <th>Kehadiran</th>
+                <th>Ucapan</th>
+                <th>Tanggal Mengisi</th>
+              </tr>
+            </thead>
+            <tfoot>
+              <tr>
+                <th>Nama</th>
+                <th>Kehadiran</th>
+                <th>Ucapan</th>
+                <th>Tanggal Mengisi</th>
+              </tr>
+            </tfoot>
+          </table>
+        </div>
 
       </div>
     </section>
     <!-- Intro End -->
 
     <!-- JQuery -->
-    <script src="js/jquery-1.11.0.min.js"></script>        
+    <script src="js/jquery-1.11.0.min.js"></script>
     <!-- Bootstrap JS -->
     <script src="js/bootstrap.min.js"></script>
 
@@ -107,16 +109,23 @@
       $(document).ready(function () {
         $('#example').DataTable({
           "ajax": "https://rnazarf.com/wedding/get_data.php",
-          "columns": [
-            { "data": "nama" },
-            { "data": "kehadiran" },
-            { "data": "ucapan" },
-            { "data": "tanggal" }
+          "columns": [{
+              "data": "nama"
+            },
+            {
+              "data": "kehadiran"
+            },
+            {
+              "data": "ucapan"
+            },
+            {
+              "data": "tanggal"
+            }
           ],
-          "searching": false,   // Search Box will Be Disabled
-          "ordering": false,    // Ordering (Sorting on Each Column)will Be Disabled
-          "info": true,         // Will show "1 to n of n entries" Text at bottom
-          "lengthChange": false // Will Disabled Record number per page
+          "searching": false, // Search Box will Be Disabled
+          "ordering": false, // Ordering (Sorting on Each Column)will Be Disabled
+          "info": true, // Will show "1 to n of n entries" Text at bottom
+          "lengthChange": false, // Will Disabled Record number per page,          
         });
       });
     </script>

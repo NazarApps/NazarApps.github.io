@@ -70,17 +70,7 @@
                 <div class="modal-content-full-width modal-content ">
                     <div class="modal-body">
                         <div class="single-slider">
-                            <div class="slider-content text-white" style="padding-top: 200px">
-                                <script>
-                                    function play() {
-                                      var audio = document.getElementById("audio");
-                                      audio.play();
-                                    }
-                                   
-                                  </script>
-                              
-                                 
-                                  
+                            <div class="slider-content text-white" style="padding-top: 200px">  
                                 <h2>
                                     Mr/Mrs </h2>
 									<h3 align=center>
@@ -90,9 +80,27 @@
 									<br>
                                     You are Invited to Nani & Wahidin    
                                     <br>                                
-                                    <button type="button" value="PLAY" onclick="play()" class="btn btn-danger btn-md btn-rounded" data-dismiss="modal">Open Invitation</button>
+                                    <button type="button" value="PLAY" onclick="play()" class="btn btn-danger btn-md btn-rounded">Open Invitation</button>
                                     <audio id="audio" src="images/baru/sepertiga.mp3" loop></audio>
                                 </h2>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="modal fade right" id="modal2" tabindex="-1" role="dialog" aria-labelledby="exampleModalPreviewLabel"
+            aria-hidden="true">
+            <div class="modal-dialog-full-width modal-dialog momodel modal-fluid" role="document">
+                <div class="modal-content-full-width modal-content ">
+                    <div class="modal-body">
+                        <div class="single-slider">
+                            <div class="slider-content text-white" style="padding-top: 10px">  
+                                <div class="text-center">
+                                    <img style="max-width: 100%;height: auto;" src="images/protokol.jpeg" alt="">
+                                    <button type="button" class="btn btn-danger btn-md btn-rounded" data-dismiss="modal">Mengerti</button>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -454,9 +462,6 @@
                 <div class="thanks">Thanks for Visiting our Website</div>
                 <div class="footer_txt">
 
-
-
-
                     <!-- Social Buttons -->
                     <div class="footer_social">
                         <a href="#"><i class="fa fa-twitter"></i></a>
@@ -492,8 +497,6 @@
         <!-- ScrollR JS -->
         <script src="js/skrollr.min.js"></script>
 
-
-
         <!-- PrefixFree -->
         <script src="js/prefixfree.min.js"></script>
 
@@ -507,9 +510,13 @@
             var urlParams = new URLSearchParams(window.location.search);
             $('#person').html(urlParams.get('n') ? urlParams.get('n') : '')
 
+            function play() {
+              var audio = document.getElementById("audio");
+              audio.play();
+              $('#modal1').hide();
+              $('#modal2').modal();
+            }
         </script>
-
-
     </div>
 
 </body>
