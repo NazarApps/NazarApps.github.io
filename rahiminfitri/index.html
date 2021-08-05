@@ -33,19 +33,6 @@
     <![endif]-->
 </head>
 
-<audio id="audio" loop>
-  <source src="./music/music.mp3" type="audio/mp3">
-</audio>
-
-<script src="js/jquery.min.js"></script>
-
-<script>
-  $(document).on('touchmove', function () {
-    var audio = document.getElementById("audio");
-    audio.play();
-  });
-</script>
-
 <body id="page-top" data-spy="scroll" data-target=".navbar-custom">
   <!-- Preloader -->
   <div id="preloader">
@@ -57,6 +44,10 @@
       <div class="rect5"></div>
     </div>
   </div>
+
+  <audio id="audio" loop>
+    <source src="./music/music.mp3" type="audio/mp3">
+  </audio>
 
   <!--Carousel-->
   <div id="myCarousel" class="carousel slide carousel-fade">
@@ -78,7 +69,7 @@
         <h3 style="font-family: 'Great Vibes', cursive; font-size: 35px;" class="fadeIn wow animated"
           data-wow-delay="1.6">Minggu, 15 Agustus 2021</h3>
         <div class="btn-special slideInUp wow animated page-scroll" data-wow-delay="0.7s">
-          <a href="#about"><span>Buka Undangan</span></a>
+          <a id="play" href="#about"><span>Buka Undangan</span></a>
         </div>
       </div>
       <div class="item active">
@@ -536,9 +527,10 @@
       </div>
     </div>
   </section>
-
+  
   <!-- Al JS Plugins -->
   <script src="js/modernizr.custom.js"></script>
+  <script src="js/jquery.min.js"></script>
   <script src="js/jquery-ui.min.js"></script>
   <script src="js/bootstrap.min.js"></script>
   <script src="js/jquery.easing.min.js"></script>
@@ -562,6 +554,17 @@
   <script src="js/prefixfree.js"></script>
   <script src="js/countup.js"></script>
   <script src="js/modernizr.hover.js"></script>
+
+  <script>
+    function play() {
+      var audio = document.getElementById("audio");
+      audio.play();      
+    }
+    $('#play').click(function () {
+      play();
+      $('#about').focus();
+    })
+  </script>
   <script>
 
     function copyTextF(bank) {
